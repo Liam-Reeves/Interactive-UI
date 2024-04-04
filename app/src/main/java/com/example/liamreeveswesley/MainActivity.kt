@@ -34,6 +34,7 @@ import androidx.compose.ui.text.AnnotatedString
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import coil.compose.AsyncImage
 import com.example.liamreeveswesley.ui.theme.LiamReevesWesleyTheme
 
 class MainActivity : ComponentActivity() {
@@ -57,6 +58,7 @@ fun Home() {
         horizontalAlignment = Alignment.CenterHorizontally,
     ) {
 
+
         Row() {
             Text("Chats")
             Spacer(modifier = Modifier.width(10.dp))
@@ -72,7 +74,9 @@ fun Home() {
             Spacer(modifier = Modifier.height(10.dp))
 
 
+
         }
+
 
 //        Text("Powered by Reeves Tech Solutions",
 //            fontSize = 37.sp,
@@ -115,13 +119,33 @@ fun Home() {
 //            aa.startActivity(Intent(aa, InputActivity::class.java))
 
         val qq = LocalContext.current
-        Text("Input",
+        Text("Input",fontSize = 40.sp,
             modifier =Modifier
                 .clickable {
                     qq.startActivity(Intent(qq, AssignmentActivity::class.java))
                 }
 
             )
+
+        val enter = LocalContext.current
+        Text("Click Here",fontSize = 40.sp,
+            modifier =Modifier
+                .clickable {
+                    enter.startActivity(Intent(enter, WebActivity::class.java))
+                }
+
+        )
+
+        val view = LocalContext.current
+        Text("Access This Page", fontSize = 40.sp,
+            modifier =Modifier
+                .clickable {
+                    view.startActivity(Intent(view, WebViewActivity::class.java))
+                }
+
+        )
+
+
 
 
 

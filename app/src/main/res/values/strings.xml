@@ -7,4 +7,7 @@
     <string name="title_activity_test">TestActivity</string>
     <string name="title_activity_input">InputActivity</string>
     <string name="title_activity_assignment">AssignmentActivity</string>
+    <string name="title_activity_web2">WebActivity2</string>
+    <string name="title_activity_web">WebActivity</string>
+    <string name="title_activity_web_view">WebViewActivity</string>
 </resources>
