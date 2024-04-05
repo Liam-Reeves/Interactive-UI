@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">LiamReevesWesley</string>
+    <string name="app_name">E-Wear Kenya</string>
     <string name="title_activity_about">AboutActivity</string>
     <string name="title_activity_products">ProductsActivity</string>
     <string name="title_activity_contact">ContactActivity</string>

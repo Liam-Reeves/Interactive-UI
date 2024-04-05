@@ -4,9 +4,11 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.compose.animation.expandHorizontally
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
@@ -18,6 +20,7 @@ import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Favorite
 import androidx.compose.material.icons.filled.LocationOn
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
@@ -25,6 +28,7 @@ import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
+import androidx.compose.material3.minimumInteractiveComponentSize
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -32,6 +36,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.RectangleShape
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontStyle
@@ -49,6 +54,12 @@ class AssignmentActivity : ComponentActivity() {
         }
     }
 }
+
+
+private infix fun <Dp> Unit.padding(dp: Dp) {
+
+}
+
 @Preview(showBackground = true)
 @Composable
 fun Task() {
@@ -253,56 +264,61 @@ fun Task() {
                     )
 
 
-//                }
-//                            Row(
-//                               modifier = Modifier
-//
-//                           ) {
-//                               androidx.compose.foundation.Image(
-//                                   painter = painterResource(id = R.drawable.desert),
-//                                   contentDescription =" ",
-//                                   modifier = Modifier
-//                                       .size(width = 10.dp,
-//                                           height = 10.dp)
-//                               )
-//                               val Island = LocalContext.current
-//                               Button(onClick = {Island.startActivity(Intent(Island, MainActivity::class.java))},
-//                                   colors = ButtonDefaults.buttonColors(Color.White),
-//                                   shape = RoundedCornerShape(10.dp),
-//                                   border = BorderStroke(1.dp, Color.Black),
-//
-//
-//
-//                                   ) {
-//                                   Text("Nusa Penida",
-//                                       color = Color.Black,
-//                                       fontSize = 20.sp,
-//                                       fontFamily = FontFamily.SansSerif,
-//                                       )
-//
-//                               }
-//
-//
-//                           }
+            }
+
+           }
+            Column(
+                modifier = Modifier
+            ) {
+                Row {
+
+                    Box(
+                        modifier = Modifier
+                            .size(200.dp),
+                           contentAlignment = Alignment.CenterEnd
 
 
-               }
+                    ) {
+                        androidx.compose.foundation.Image(painter = painterResource(id = R.drawable.boat) ,
+                            contentDescription = "",
+                            modifier = Modifier,
+                             contentScale = ContentScale.Crop,
 
-                AsyncImage(
-                    model = "https://images.unsplash.com/photo-1582567397638-559df60a4d24?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwyMnx8fGVufDB8fHx8fA%3D%3D",
-                    contentDescription = null,
-                )
+                            )
+
+                        Icon(imageVector = Icons.Default.Favorite,
+                            contentDescription =null,
+                            modifier =Modifier.size(24.dp),
+                                colorResource(id = R.color.teal_700),
 
 
 
+                           
+
+
+                            )
+
+                    }
+                    Spacer(modifier = Modifier.width(50.dp))
+
+                    Box {
+                        androidx.compose.foundation.Image(painter = painterResource(id = R.drawable.nature) ,
+                            contentDescription = null )
+                   
 
 
 
+                    }
+
+
+                }
 
 
 
 
             }
+
+
 
         }
     } }
